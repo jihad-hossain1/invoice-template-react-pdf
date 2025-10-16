@@ -21,8 +21,8 @@ export const StyleFive: React.FC<StyleFiveProps> = (props: StyleFiveProps) => {
     <Document>
       <Page size="A4" style={styles.page}>
         {/* print at  */}
-        <View style={{position: "absolute", top: 20, right: 30}}>
-         <Text style={{fontSize: 6}}>Print At: {new Date().toLocaleDateString()} - {new Date().toLocaleTimeString()}</Text>
+        <View style={{ position: "absolute", top: 20, right: 30 }}>
+          <Text style={{ fontSize: 6 }}>Print At: {new Date().toLocaleDateString()} - {new Date().toLocaleTimeString()}</Text>
         </View>
         {/* Watermark */}
         {invoice?.companyName && invoice?.isWatermark !== false && (
@@ -92,8 +92,8 @@ export const StyleFive: React.FC<StyleFiveProps> = (props: StyleFiveProps) => {
               </Text>
               <Text style={[styles.tableCell, styles.colPrice]}>{item?.price}</Text>
               <Text style={[styles.tableCell, styles.colAmount]}>
-                {item?.price * item?.quantity +
-                  (item?.price * item?.quantity * item?.tax) / 100}
+                {Number(item?.price ?? 0) * Number(item?.quantity ?? 0) +
+                  (Number(item?.price ?? 0) * Number(item?.quantity ?? 0) * Number(item?.tax ?? 0)) / 100}
               </Text>
             </View>
           ))}
@@ -131,6 +131,18 @@ export const StyleFive: React.FC<StyleFiveProps> = (props: StyleFiveProps) => {
                 <Text style={styles.summaryLabel}>VAT%</Text>
                 <Text style={styles.summaryValue}>{invoice?.totalTax}</Text>
               </View>
+              <View style={styles.summaryRow}>
+                <Text style={styles.summaryLabel}>Due Amount</Text>
+                <Text style={styles.summaryValue}>{0}</Text>
+              </View>
+              <View style={styles.summaryRow}>
+                <Text style={styles.summaryLabel}>Delivery Charge</Text>
+                <Text style={styles.summaryValue}>{0}</Text>
+              </View>
+              <View style={styles.summaryRow}>
+                <Text style={styles.summaryLabel}>Others</Text>
+                <Text style={styles.summaryValue}>{0}</Text>
+              </View>
               <View style={{ ...styles.summaryRow, border: "0" }}>
                 <Text style={styles.summaryLabel}>TOTAL</Text>
                 <Text style={styles.summaryValue}>{invoice?.total}</Text>
@@ -139,12 +151,21 @@ export const StyleFive: React.FC<StyleFiveProps> = (props: StyleFiveProps) => {
           </View>
         </View>
 
-          {/* footer section  */}
-           
-          <View style={{position: "absolute", bottom: 30, left: 30}}>
-            {/* thank full message  */}
-            <Text style={styles.termsText}>Thank you for your business.</Text>
-          </View>
+       {/* Terms and Conditions */}
+        {
+          invoice?.terms && (
+            <View style={styles.termsSection}>
+              <Text style={styles.termsTitle}>TERMS AND CONDITIONS</Text>
+              <Text style={styles.termsText}>{invoice?.terms}</Text>
+            </View>
+          )
+        } 
+
+        {/* footer section  */}
+        {/* thank full message  */}
+        <View style={{ position: "absolute", bottom: 30, left: 30 }}>
+          <Text style={{ fontSize: 6, color: "#333333", textAlign: "center" }}>Thank you for your business.</Text>
+        </View>
       </Page>
     </Document>
   );
@@ -283,6 +304,9 @@ const styles = StyleSheet.create({
   tableCell: {
     fontSize: 9,
     color: "#333333",
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+    whiteSpace: "normal",
   },
   colS: { width: "5%" },
   colDesc: { width: "45%" },
@@ -305,16 +329,17 @@ const styles = StyleSheet.create({
     marginBottom: 2,
   },
   termsSection: {
-    marginTop: 20,
+    marginTop: 6,
+    paddingHorizontal: 30,
   },
   termsTitle: {
-    fontSize: 10,
-    fontWeight: "bold",
+    fontSize: 8,
+    fontWeight: "semibold",
     color: "#000000",
     marginBottom: 5,
   },
   termsText: {
-    fontSize: 9,
+    fontSize: 6,
     color: "#333333",
     lineHeight: 1.5,
   },
