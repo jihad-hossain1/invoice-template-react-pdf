@@ -1,0 +1,62 @@
+<svg width="300" height="400" viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="400" fill="#ffffff" />
+  
+  <!-- Side Rectangle -->
+  <rect x="0" y="0" width="90" height="400" fill="#9b59b6" />
+  
+  <!-- Logo -->
+  <rect x="15" y="20" width="60" height="30" fill="#ffffff" />
+  
+  <!-- Business Info -->
+  <text x="15" y="70" font-family="Arial" font-size="8" fill="#ffffff">BUSINESS INFO:</text>
+  <line x1="15" y1="80" x2="75" y2="80" stroke="#ffffff" stroke-width="1" opacity="0.5" />
+  <line x1="15" y1="90" x2="70" y2="90" stroke="#ffffff" stroke-width="1" opacity="0.5" />
+  <line x1="15" y1="100" x2="65" y2="100" stroke="#ffffff" stroke-width="1" opacity="0.5" />
+  <line x1="15" y1="110" x2="60" y2="110" stroke="#ffffff" stroke-width="1" opacity="0.5" />
+  
+  <!-- Invoice Title -->
+  <text x="110" y="35" font-family="Arial" font-size="18" font-weight="bold" fill="#9b59b6">INVOICE</text>
+  
+  <!-- Invoice Details -->
+  <rect x="110" y="50" width="170" height="50" fill="#ffffff" />
+  <line x1="110" y1="60" x2="280" y2="60" stroke="#d1d5db" stroke-width="1" />
+  <line x1="110" y1="70" x2="280" y2="70" stroke="#d1d5db" stroke-width="1" />
+  <line x1="110" y1="80" x2="280" y2="80" stroke="#d1d5db" stroke-width="1" />
+  <line x1="110" y1="90" x2="280" y2="90" stroke="#d1d5db" stroke-width="1" />
+  
+  <!-- Client Info -->
+  <rect x="110" y="110" width="170" height="50" fill="#ffffff" />
+  <text x="110" y="120" font-family="Arial" font-size="8" fill="#555555">BILL TO:</text>
+  <line x1="110" y1="130" x2="280" y2="130" stroke="#d1d5db" stroke-width="1" />
+  <line x1="110" y1="140" x2="270" y2="140" stroke="#d1d5db" stroke-width="1" />
+  <line x1="110" y1="150" x2="260" y2="150" stroke="#d1d5db" stroke-width="1" />
+  
+  <!-- Items Table -->
+  <rect x="110" y="170" width="170" height="100" fill="#ffffff" stroke="#d1d5db" stroke-width="1" />
+  <rect x="110" y="170" width="170" height="20" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1" />
+  <line x1="190" y1="170" x2="190" y2="270" stroke="#d1d5db" stroke-width="1" />
+  <line x1="230" y1="170" x2="230" y2="270" stroke="#d1d5db" stroke-width="1" />
+  <line x1="110" y1="190" x2="280" y2="190" stroke="#d1d5db" stroke-width="1" />
+  <line x1="110" y1="210" x2="280" y2="210" stroke="#d1d5db" stroke-width="1" />
+  <line x1="110" y1="230" x2="280" y2="230" stroke="#d1d5db" stroke-width="1" />
+  <line x1="110" y1="250" x2="280" y2="250" stroke="#d1d5db" stroke-width="1" />
+  
+  <!-- Totals -->
+  <rect x="180" y="280" width="100" height="50" fill="#ffffff" />
+  <line x1="180" y1="290" x2="280" y2="290" stroke="#d1d5db" stroke-width="1" />
+  <line x1="180" y1="300" x2="280" y2="300" stroke="#d1d5db" stroke-width="1" />
+  <line x1="180" y1="310" x2="280" y2="310" stroke="#d1d5db" stroke-width="1" />
+  <rect x="180" y="320" width="100" height="20" fill="#f9fafb" />
+  <line x1="180" y1="320" x2="280" y2="320" stroke="#d1d5db" stroke-width="1" />
+  
+  <!-- Notes -->
+  <rect x="110" y="340" width="170" height="40" fill="#ffffff" />
+  <text x="110" y="350" font-family="Arial" font-size="8" fill="#555555">NOTES:</text>
+  <line x1="110" y1="360" x2="280" y2="360" stroke="#d1d5db" stroke-width="1" />
+  <line x1="110" y1="370" x2="260" y2="370" stroke="#d1d5db" stroke-width="1" />
+  
+  <!-- Terms -->
+  <rect x="110" y="380" width="170" height="20" fill="#ffffff" />
+  <line x1="110" y1="380" x2="280" y2="380" stroke="#d1d5db" stroke-width="1" />
+  <text x="110" y="390" font-family="Arial" font-size="7" fill="#777777">TERMS & CONDITIONS</text>
+</svg>
